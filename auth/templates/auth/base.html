@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="static/{% block link %}{% endblock %}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('auth.static', filename='style.css')}}" />
+
+</head>
+
+<body>
+
+    {% block content %}{% endblock %}
+
+</body>
+
+</html>

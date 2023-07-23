@@ -1,0 +1,59 @@
+h1 {
+    margin-top: 100px;
+    location: absolute;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+h2 {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+a {
+    line-height: 130px;
+    color: white;
+    font-size: 30px;
+    text-decoration-line: none;
+    background-color: rgba(212, 113, 113, 0.479);
+    border-radius: .5rem;
+    border: 2px solid rgb(136, 9, 9);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.taga {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.tagb {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    background-image: url(https://wrtn-image-user-output.s3.ap-northeast-2.amazonaws.com/64aaad0dfbf8159ee25b2e39/1688907061498.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+section {}
+
+#block {
+    background-color: rgba(212, 113, 113, 0.479);
+    width: 30vw;
+    margin-left: 35vw;
+    border-radius: .8rem;
+}

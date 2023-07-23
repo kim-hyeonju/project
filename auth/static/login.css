@@ -1,0 +1,35 @@
+div {
+    margin-top: 27vh;
+    margin-left: 35vw;
+    border: 2px solid rgba(145, 27, 27, 0.171);
+    width: 30vw;
+    height: 40vh;
+    text-align: center;
+    background-color: rgba(145, 27, 27, 0.171);
+    border-radius: .8rem;
+}
+
+h2 {
+    margin-top: 80px;
+    font-size: 40px;
+}
+
+.num {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: .6rem;
+}
+
+.pw {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: .6rem;
+}
+
+.submit {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: .6rem;
+}

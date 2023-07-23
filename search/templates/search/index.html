@@ -1,0 +1,32 @@
+{% extends "search/base.html" %}
+{% block title %}도서목록{% endblock %}
+{% block link %}index.css{% endblock %}
+{% block content %}
+<h2>도서목록</h2>
+
+<div class="taga"><a href="{{url_for('search.create_book')}}">도서목록작성</a></div>
+<table class="user">
+    <tr class="category">
+        <th>고유번호</th>
+        <th>책 제목</th>
+        <th>책장</th>
+        <th>블록</th>
+        <th>작가</th>
+        <th>대출여부</th>
+    </tr>
+    {% for book in books %}
+
+    <tr>
+        <td>
+            <a href="{{url_for('search.edit_book', book_id=book.id)}}">{{book.id}}</a>
+        </td>
+        <td>{{book.bookname}}</td>
+        <td>{{book.shelf}}</td>
+        <td>{{book.block}}</td>
+        <td>{{book.writer}}</td>
+        <td>{{book.loan}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

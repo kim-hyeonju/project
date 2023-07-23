@@ -1,0 +1,43 @@
+table {
+    width: 98vw;
+    height: 100vh;
+    border-color: red;
+    border: 2px solid;
+}
+
+
+tr {
+    border: 2px solid;
+    font-size: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+    border: 3px solid rgba(180, 20, 20, 0.466);
+    width: 300px;
+    text-align: center;
+    margin-left: 790px;
+}
+
+
+
+.user {
+    border: 2px solid black;
+}
+
+.category {
+    border-bottom: 4px solid rgba(180, 20, 20, 0.466);
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.taga {
+    font-size: 20px;
+    border: 2px solid black;
+    width: 250px;
+    text-align: center;
+
+}

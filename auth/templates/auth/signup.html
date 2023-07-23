@@ -1,0 +1,59 @@
+{% extends "auth/base.html" %}
+{% block title %}사용자 회원가입{% endblock %}
+{% block link %}signup.css{% endblock %}
+{% block content %}
+<div class='box'>
+    <div class='wave -one'></div>
+    <div class='wave -two'></div>
+    <div class='wave -three'></div>
+    <div class='title'>Book-Focusing</div>
+
+    <h2>사용자 회원가입</h2>
+    <form action="{{url_for('auth.signup', next=request.args.get('next')) }}" method="POST" novalidate="novalidate">
+
+        {% for message in get_flashed_messages() %}
+        <p style="color: red;">{{message}}</p>
+        {% endfor %}
+        {{ form.csrf_token }}
+
+        <p>
+            {{ form.user_id.label }} {{ form.user_id(size=30,class="num",placeholder="학번") }}
+        </p>
+        {% for error in form.user_id.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form.username.label }}
+            {{ form.username(size=30,class="name", placeholder="사용자명") }}
+        </p>
+
+        {% for error in form.username.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form.email.label }} {{ form.email(size=30,class="mail",placeholder="메일 주소") }}
+        </p>
+
+        {% for error in form.email.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form.password.label }} {{ form.password(size=30,class="pw",placeholder="비밀번호") }}
+        </p>
+
+        {% for error in form.password.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+
+        <p>{{form.submit(class="submit")}}</p>
+
+
+
+    </form>
+</div>
+
+{% endblock %}

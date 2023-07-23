@@ -1,0 +1,58 @@
+{% extends "search/base.html" %}
+{% block title %}도서목록 작성{% endblock %}
+{% block link %}create.css{% endblock %}
+{% block content %}
+
+<div>
+    <h2>도서 목록 작성</h2>
+    <form action="{{url_for('search.create_book')}}" method="POST" novalidate="novalidate">
+
+        {{ form2.csrf_token }}
+
+        <p>
+            {{ form2.book_id.label }} {{ form2.book_id(placeholder="고유번호") }}
+        </p>
+        {% for error in form2.book_id.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form2.bookname.label }} {{ form2.bookname(placeholder="사용자명") }}
+        </p>
+        {% for error in form2.bookname.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form2.shelf.label }} {{ form2.shelf(placeholder="책장번호") }}
+        </p>
+        {% for error in form2.shelf.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form2.block.label }} {{ form2.block(placeholder="블록번호") }}
+        </p>
+        {% for error in form2.block.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form2.writer.label }} {{ form2.writer(placeholder="작가명") }}
+        </p>
+        {% for error in form2.writer.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p>
+            {{ form2.loan.label }} {{ form2.loan(placeholder="대출가능여부") }}
+        </p>
+        {% for error in form2.loan.errors %}
+        <span style="color : red;">{{ error }}</span>
+        {% endfor %}
+
+        <p> {{ form2.submit(class="submit") }} </p>
+
+    </form>
+    {% endblock %}
+</div>

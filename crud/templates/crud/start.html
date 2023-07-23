@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="static/start.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <title>ㅇㅇ대학교 도서관</title>
+</head>
+
+<body>
+    <section>
+
+        <div>
+            <h1 class="animate__animated animate__fadeIn animate__slower">책에 집중하라, Book-Focusing<h1>
+                    <h2 class="animate__animated animate__fadeIn animate__slower animate__delay-2s">ㅇㅇ대학교 도서관에 오신 걸
+                        환영합니다
+                    </h2>
+        </div>
+        <div id="block">
+            <div class="taga"> <a href="{{url_for('auth.signup')}}">회원가입창으로 가기</a></div>
+
+            <div class="tagb"> <a href="{{url_for('auth.login')}}">로그인창으로 가기</a></div>
+        </div>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{% extends "crud/base.html" %}
+{% block title %}회원관리{% endblock %}
+{% block link %}index.css{% endblock %}
+{% block content %}
+<div>
+    <h2>회원 관리</h2>
+
+    <div class="taga"> <a href="{{url_for('auth.signup')}}">사용자 신규등록(관리자용)</a></div>
+    <table class="user">
+        <tr class="category">
+            <th>학번</th>
+            <th>사용자명</th>
+            <th>메일 주소</th>
+        </tr>
+        {% for user in users %}
+
+        <tr>
+            <td>
+                <div class="tagb"> <a href="{{url_for('crud.edit_user', user_id=user.id)}}">{{user.id}}</a></div>
+            </td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% endblock %}
+</div>

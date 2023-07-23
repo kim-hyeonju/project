@@ -1,0 +1,67 @@
+{% extends "search/base.html" %}
+{% block title %}도서 신규 작성{% endblock %}
+{% block content %}
+
+<h2>도서 편집</h2>
+<form action="{{url_for('search.edit_book',book_id=book.id)}}" method="POST" novalidate="novalidate">
+
+    {{ form.csrf_token }}
+
+    <p>
+        {{ form.book_id.label }} {{ form.book_id(placeholder="고유번호", value=book.book_id) }}
+    </p>
+
+    {% for error in form.book_id.errors %}
+    <span style="color : red;">{{ error }}</span>
+    {% endfor %}
+
+
+    <p>
+        {{ form.bookname.label }} {{ form.bookname(placeholder="책제목", value=book.bookname) }}
+    </p>
+
+    {% for error in form.bookname.errors %}
+    <span style="color : red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>
+        {{ form.shelf.label }} {{ form.shelf(placeholder="책장번호", value=book.shelf) }}
+    </p>
+
+    {% for error in form.shelf.errors %}
+    <span style="color : red;">{{ error }}</span>
+    {% endfor %}
+    <p>
+        {{ form.block.label }} {{ form.block(placeholder="블록번호", value=book.block) }}
+    </p>
+
+    {% for error in form.block.errors %}
+    <span style="color : red;">{{ error }}</span>
+    {% endfor %}
+    <p>
+        {{ form.writer.label }} {{ form.writer(placeholder="작가명", value=book.writer) }}
+    </p>
+
+    {% for error in form.writer.errors %}
+    <span style="color : red;">{{ error }}</span>
+    {% endfor %}
+
+    <p>
+        {{ form.loan.label }} {{ form.loan(placeholder="대출가능여부", value=book.loan) }}
+    </p>
+
+    {% for error in form.loan.errors %}
+    <span style="color : red;">{{ error }}</span>
+    {% endfor %}
+
+
+
+    <p><input type="submit" value="갱신" /> </p>
+</form>
+
+<form action="{{url_for('search.delete_book',book_id=book.id)}}" method="POST">
+    {{form.csrf_token}}
+    <input type="submit" value="삭제">
+</form>
+
+{% endblock %}
